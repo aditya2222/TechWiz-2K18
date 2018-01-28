@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<h1 class="posttile loader">{{ rule.title }}</h1>
+    {% if rule.published_date %}
+    <div class="date postdate">
+{{ rule.published_date }}
+    </div>
+
+        {% else %}
+        <a class="btn btn-default" href="{% url 'rule_publish' pk=rule.pk %}">Publish</a>
+    {% endif %}
+
+    <p class="postcontent">{{ rule.text|safe|linebreaksbr }}</p>
+    
+    {% if user.is_authenticated %}
+        <a class="btn btn-primary" href="{% url 'rule_edit' pk=rule.pk %}">
+        <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        <a href="{% url 'rule_delete' pk=rule.pk %}">
+        <span class="glyphicon glyphicon-remove"></span>
+        </a>
+    {% endif %}
+    <hr>
+
+{% endblock %}
