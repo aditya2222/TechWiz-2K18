@@ -66,3 +66,20 @@ class Rule(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Registration(models.Model):
+    event = models.ForeignKey('blog.Event',on_delete=models.CASCADE,)
+    firstName = models.CharField(max_length=256,)
+    secondName = models.CharField(max_length=256)
+    paynow=models.BooleanField(default=False)
+    rollNumber=models.IntegerField()
+
+    def get_absolute_url(self):
+        if self.paynow==True:
+            return reverse('pay-now')
+        else:
+            return reverse('about')
+
+    def __str__(self):
+        return self.firstName

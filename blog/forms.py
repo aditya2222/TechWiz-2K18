@@ -1,5 +1,5 @@
 from django import forms
-from blog.models import Post,Comment,Rule
+from blog.models import Post,Comment,Rule,Registration
 
 
 class PostForm(forms.ModelForm):
@@ -31,3 +31,9 @@ class RuleForm(forms.ModelForm):
             'title':forms.TextInput(attrs={'class':'textinputclass'}),
             'text':forms.Textarea(attrs={'class':'editable medium-editor-textarea postcontent'})
         }
+
+class RegisterForm(forms.ModelForm):
+
+    class Meta:
+        model = Registration
+        fields = ('event','firstName','secondName','rollNumber','paynow')

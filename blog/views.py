@@ -4,8 +4,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView,ListView,DetailView,CreateView,UpdateView,DeleteView
-from blog.models import Post,Comment,Rule
-from blog.forms import PostForm,CommentForm,RuleForm
+from blog.models import Post,Comment,Rule,Registration
+from blog.forms import PostForm,CommentForm,RuleForm,RegisterForm
 # create your views here
 
 class AboutView(TemplateView):
@@ -141,4 +141,19 @@ def rule_publish(request,pk):
     return redirect('rule_detail',pk=pk)
 
 
+
+# Paypal
+
+class PaypalView(TemplateView):
+    template_name = 'blog/paypal_form.html'
+
+
+
+# Rules
+
+class CreateRegsiterView(CreateView):
+    login_url = '/login/'
+    redirect_field_name = '/'
+    form_class = RegisterForm
+    model = Registration
 

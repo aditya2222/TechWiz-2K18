@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <h1>Registration</h1>
+    <p>Select Pay Now If You Wih to pay now for the event or leave blank to pay on the spot!</p>
+    <form action="" method="post">
+    {% csrf_token %}
+        {% bootstrap_form form %}
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+{% endblock %}

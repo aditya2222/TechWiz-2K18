@@ -1,5 +1,5 @@
 from django.urls import path
-from blog.views import AboutView,PostListView,PostDetailView,CreatePostView,UpdatePostView,PostDeleteView,DraftListViwe,add_comment_to_post,comment_approve,comment_remove,post_publish,RuleListView,RuleDeleteView,CreateRuleView,RuleDetailView,UpdateRuleView,rule_publish
+from blog.views import AboutView,PostListView,PostDetailView,CreatePostView,UpdatePostView,PostDeleteView,DraftListViwe,add_comment_to_post,comment_approve,comment_remove,post_publish,RuleListView,RuleDeleteView,CreateRuleView,RuleDetailView,UpdateRuleView,rule_publish,CreateRegsiterView,PaypalView
 
 urlpatterns=[
     path('posts',PostListView.as_view(),name='post_list'),
@@ -19,4 +19,7 @@ urlpatterns=[
     path('rule/<int:pk>/edit/', UpdateRuleView.as_view(), name='rule_edit'),
     path('rule/<int:pk>/remove/', RuleDeleteView.as_view(), name='rule_delete'),
     path('rule/<int:pk>/publish/',rule_publish,name='rule_publish'),
+    path('registration',CreateRegsiterView.as_view(),name='register'),
+    path('paynow',PaypalView.as_view(),name='pay-now')
+
 ]
