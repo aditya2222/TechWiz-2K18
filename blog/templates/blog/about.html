@@ -1,303 +1,615 @@
-
 {% load staticfiles %}
-    <!DOCTYPE html>
+
+
+<!DOCTYPE html>
 <html lang="en">
-
-  <head>
-
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>TechWiz 2K18</title>
+    <title>TechFest 2K18</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bower_components/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+</head>
+<body data-spy="scroll" data-target="#site-nav">
+    <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
 
-    <!-- Custom fonts for this template -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+                <!-- logo -->
+                <div class="site-branding">
+                    <a class="logo" href="index.html">
 
-    <!-- Plugin CSS -->
-    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+                        <!-- logo image  -->
+                        <img src="{% static 'assets/images/logo.jpg' %}" alt="Logo">
 
-    <!-- Custom styles for this template -->
-    <link href="{% static 'css/creative.min.css' %}" rel="stylesheet">
+                        TECH FEST 2K18
+                    </a>
+                </div>
 
-  </head>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-items" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-  <body id="page-top">
+            </div><!-- /.navbar-header -->
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">TechWiz 2K18</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-              {% if user.is_authenticated %}
-              <li class="nav-item"><a class="nav-link nav navbar-right" href="{% url 'post_list' %}">
-                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                </a></li>
-                  {% else %}
-                  <li class="nav-item"><a class="nav-link nav navbar-right" href="{% url 'login' %}">
-                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                </a></li>
-              {% endif %}
+            <div class="collapse navbar-collapse" id="navbar-items">
+                <ul class="nav navbar-nav navbar-right">
 
- </ul>
+                    <!-- navigation menu -->
+                    <li class="active"><a data-scroll href="#about">About</a></li>
+                    <li><a data-scroll href="#speakers">Speakers</a></li>
+                    <li><a data-scroll href="#schedule">Schedule</a></li>
+                    <li><a data-scroll href="#partner">Partner</a></li>
+                    <!-- <li><a data-scroll href="#">Sponsorship</a></li> -->
+                    <li><a data-scroll href="#faq">FAQ</a></li>
+                    <li><a data-scroll href="#photos">Photos</a></li>
 
-
-
-        </div>
-      </div>
+                </ul>
+            </div>
+        </div><!-- /.container -->
     </nav>
 
+    <header id="site-header" class="site-header valign-center">
+        <div class="intro">
 
+            <h2>19 April, 2018 / CGCTC, JAHNJERI</h2>
 
+            <h1>TECHWIZ 2K18</h1>
 
+            <p>TechFest hosted by CGCTC Jhanjeri</p>
 
+            <a class="btn btn-white" data-scroll href="#about">Register Now</a>
 
-
-
-    <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <strong>TehcWiz 2K18</strong>
-            </h1>
-            <hr>
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">Welcome to TechWiz 2k18. The most pertinent platform for the showcase of your TALENTS!</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-          </div>
         </div>
-      </div>
     </header>
 
-    <section class="bg-primary" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">We've got what you need!</h2>
-            <hr class="light my-4">
-            <p class="text-faded mb-4">From Rangoli to Oratory and Web Desigining events, We have it all!
-                You can participate in any of the events according to your field of interest and excel more in your field as well as learn
-                many more!
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
 
-            </p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
-          </div>
-        </div>
-      </div>
+                    <h3 class="section-title">About Us</h3>
+
+                    <p>
+                        CGC Jhanjeri is one of the best colleges in the North India and we are providing the best quality of education in various courses. We have Faculty of Engineering offering B.Tech (Computer Science & Engineering, Electronics and Communication Engineering, Mechanical Engineering and Civil Engineering) and M. Tech courses in CSE, ECE.
+
+                    </p>
+
+                    <figure>
+                        <img alt="" class="img-responsive" src="{% static 'assets/images/about-us.jpg' %}">
+                    </figure>
+
+                </div><!-- /.col-sm-6 -->
+
+                <div class="col-sm-6">
+
+                    <h3 class="section-title multiple-title">What is Our Goal?</h3>
+
+                    <p>
+                        We at CGC, Jhanjeri try our level best to intsill the real meaning of engineering among the students and for this each year we come up with  Tech Fest to boost the morale of
+                        all the students to the highest by providing them a platform to showcase their talents and also learn more from the others!</p>
+
+                    <ul class="list-arrow-right">
+
+                        <li>High Qauality technical events to instill knowledge and promote skill enhancement</li>
+                        <li>All types of events including all streams and branches to ensure active pariticipation of all students</li>
+                        <li>Full support from our team handling the event</li>
+                        <li>Power up to the core events</li>
+
+                    </ul>
+
+                </div><!-- /.col-sm-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
     </section>
 
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">At Your Service</h2>
-            <hr class="my-4">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Sturdy Events</h3>
-              <p class="text-muted mb-0">We keep only Robust events dedicated to the intrest of each and every participan participating in our events.</p>
+    <!--<section id="facts" class="section bg-image-1 facts text-center">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-sm-3">-->
+
+                    <!--<i class="ion-ios-calendar"></i>-->
+                    <!--<h3>2018<br>18 April</h3>-->
+                <!---->
+                <!--</div>-->
+                <!--<div class="col-sm-3">-->
+
+                    <!--<i class="ion-ios-location"></i>-->
+                    <!--<h3>CGCTC<br>JHANJERI</h3>-->
+                <!---->
+                <!--</div>-->
+                <!--<div class="col-sm-3">-->
+
+                    <!--<i class="ion-pricetags"></i>-->
+                    <!--<h3>Registration<br>Open</h3>-->
+                <!---->
+                <!--</div>-->
+                <!--<div class="col-sm-3">-->
+                <!---->
+                    <!--<i class="ion-speakerphone"></i>-->
+                    <!--<h3>Many Eminent<br>Speakers</h3>-->
+                <!---->
+                <!--</div>-->
+            <!--</div>&lt;!&ndash; row &ndash;&gt;-->
+        <!--</div>&lt;!&ndash; container &ndash;&gt;-->
+    <!--</section>-->
+
+    <section id="schedule" class="section schedule">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Event Schedule</h3>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Ready to Roll</h3>
-              <p class="text-muted mb-0">You can particapte in all the events, one after the other!</p>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="schedule-box">
+                        <div class="time">
+                            <time datetime="09:00">09:00 am</time> - <time datetime="22:00">10:00 am</time>
+                        </div>
+                        <h3>Technical Events</h3>
+                        <p>CGCTC JHANJERI</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="schedule-box">
+                        <div class="time">
+                            <time datetime="10:00">10:00 am</time> - <time datetime="22:00">10:00 am</time>
+                        </div>
+                        <h3>Non Tehcnical Events</h3>
+                        <p>CGCTC JHANJERI</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="schedule-box">
+                        <div class="time">
+                            <time datetime="10:00">10:00 am</time> - <time datetime="22:00">10:00 am</time>
+                        </div>
+                        <h3>Cultural Events</h3>
+                        <p>CGCTC JHANJERI </p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Up to Date</h3>
-              <p class="text-muted mb-0">We make sure to provide you the latest tools so that there is no hindrence in your implementation</p>
+    </section>
+
+
+    <section id="speakers" class="section speakers">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h3 class="section-title">Speakers/Event Highlights</h3>
+
+                </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Made with Compassion</h3>
-              <p class="text-muted mb-0">This event aims to promote harmony and knowledge among all!</p>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="speaker">
+
+                        <figure>
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </figure>
+
+                        <h4>Tiitle placeholder</h4>
+
+                        <p>Designation/type</p>
+
+                        <ul class="social-block">
+                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                            <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>
+                            <li><a href=""><i class="ion-social-googleplus"></i></a></li>
+                        </ul>
+
+                    </div><!-- /.speaker -->
+                </div><!-- /.col-md-4 -->
+
+                <div class="col-md-4">
+                    <div class="speaker">
+
+                        <figure>
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </figure>
+
+
+                        <h4>Tiitle placeholder</h4>
+
+                        <p>Designation/type</p>
+
+                        <ul class="social-block">
+                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                            <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>
+                            <li><a href=""><i class="ion-social-googleplus"></i></a></li>
+                        </ul>
+
+                    </div><!-- /.speaker -->
+                </div><!-- /.col-md-4 -->
+
+                <div class="col-md-4">
+                    <div class="speaker">
+
+                        <figure>
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </figure>
+
+
+                        <h4>Tiitle placeholder</h4>
+
+                        <p>Designation/type</p>
+
+                        <ul class="social-block">
+                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                            <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>
+                            <li><a href=""><i class="ion-social-googleplus"></i></a></li>
+                        </ul>
+
+                    </div><!-- /.speaker -->
+                </div><!-- /.col-md-4 -->
+            </div><!-- /.row -->
+
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="speaker">
+
+                        <figure>
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </figure>
+
+
+                        <h4>Tiitle placeholder</h4>
+
+                        <p>Designation/type</p>
+
+                        <ul class="social-block">
+                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                            <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>
+                            <li><a href=""><i class="ion-social-googleplus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <div class="speaker">
+
+                        <figure>
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </figure>
+
+
+                        <h4>Tiitle placeholder</h4>
+
+                        <p>Designation/type</p>
+
+                        <ul class="social-block">
+                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                            <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>
+                            <li><a href=""><i class="ion-social-googleplus"></i></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="speaker">
+                        <figure>
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </figure>
+
+                        <h4>Tiitle placeholder</h4>
+
+                        <p>Designation/type</p>
+                        <ul class="social-block">
+                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                            <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>
+                            <li><a href=""><i class="ion-social-googleplus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <section class="p-0" id="portfolio">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{% static 'img/1.jpg' %}">
-              <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
+    <!--<section id="registration" class="section registration">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Registration &amp; Pricing</h3>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{% static 'img/2.jpg' %}">
-              <img class="img-fluid" src="{% static 'img/2.jpg' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
+            </div>
+
+            <form action="#" id="registration-form">
+                <div class="row">
+                    <div class="col-md-12" id="registration-msg" style="display:none;">
+                        <div class="alert"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First Name" id="fname" name="fname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last Name" id="lname" name="lname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Phone" id="cell" name="cell" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Address" id="address" name="address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Zip Code" id="zip" name="zip" required>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" name="city" id="city" required>
+                                <option readonly>City</option>
+                                <option>City Name 1</option>
+                                <option>City Name 2</option>
+                                <option>City Name 3</option>
+                                <option>City Name 4</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" name="program" id="program" required>
+                                <option readonly>Select Your Program</option>
+                                <option>Program Name 1</option>
+                                <option>Program Name 2</option>
+                                <option>Program Name 3</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{% static 'img/3.jpg' %}">
-              <img class="img-fluid" src="{% static 'img/3.jpg' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
+                <div class="text-center mt20">
+                    <button type="submit" class="btn btn-black" id="registration-submit-btn">Submit</button>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{% static 'img/4.jpg' %}">
-              <img class="img-fluid" src="{% static 'img/4.jpg' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{% static 'img/5.jpg' %}">
-              <img class="img-fluid" src="{% static 'img/5.jpg' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{% static 'img/6.jpg' %}"    >
-              <img class="img-fluid" src="{% static 'img/6.jpg' %}" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="project-name">
-                    Project Name
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+            </form>
         </div>
-      </div>
+    </section> -->
+
+    <section id="contribution" class="section bg-image-2 contribution">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-uppercase mt0 font-400">Share Your ideas</h3>
+
+                    <p>In a complete professional environment, not only you showcase your talents but also learn more by sharing your ideas as all the people of the same trade and meet and coomunicate their ideas</p>
+
+                    <a class="btn btn-white" data-scroll href="#schedule">Submit</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="bg-dark text-white">
-      <div class="container text-center">
-        <h2 class="mb-4">Partcipate</h2>
-        <a class="btn btn-light btn-xl sr-button" href="{% url 'register' %}">Register Now!</a>
-      </div>
+
+    <section id="partner" class="section partner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Event Partner (Sponsors)</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-1"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-2"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-3"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-4"></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-5"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-6"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-7"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-8"></a>
+                </div>
+            </div>
     </section>
 
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Any Queries, Drop us a mail and we will be sure to get back to you in no time!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>(College Phone Number)</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">(college email address)</a>
-            </p>
-          </div>
-        </div>
-      </div>
+    <section id="faq" class="section faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Event FAQs</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> What is the price of the event tickets ?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <h3>Reasonable Pricing</h3>
+                                    <p>Not all the events have an entry price and which do have, we have made sure that pricing is kept reasonable.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> Is there any seperate entry fee? ?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">No only indivisual events costs shall be incurred</div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> College Address ?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">Chandigarh Group Of Colleges, Jhanjeri Campus</div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> How should I dress ?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">There is no compulsion on the formals. You can dress in casuals or formals.</div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"> I have specific questions that are not addressed here. Who can help me ?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="panel-body">You may call on the given contact numbers of co-ordinators and other dignitaries</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <section id="photos" class="section photos">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Photos</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="grid">
 
-    <!-- Plugin JavaScript -->
-    <script src="{% static 'js/jquery.easing.js' %}"></script>
-    <script src="{% static 'js/scrollreveal.min.js' %}"></script>
-    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+                        <li class="grid-item grid-item-sm-6">
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </li>
 
-    <!-- Custom scripts for this template -->
-    <script src="{% static 'js/creative.min.js' %}"></script>
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </li>
 
-  </body>
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </li>
 
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </li>
+
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </li>
+
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </li>
+
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </li>
+
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </li>
+
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="{% static 'assets/images/speakers/placeholder.png' %}">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="section location">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3 class="section-title">Event Location</h3>
+                    <address>
+                        <p>Chandigarh Group Of Colleges<br> Campus: Jhanjeri<br> Landran Road<br> Phone: (college phone number)<br> Email: (College Email   )</p>
+                    </address>
+                </div>
+                <div class="col-sm-9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.3341347650057!2d76.60318831499671!3d30.680873595181392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fe5b795735cfd%3A0xb287b4430b6720fb!2sChandigarh+Group+of+Colleges+Jhanjeri+Mohali!5e0!3m2!1sen!2sin!4v1518428584736" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="site-info">Designed and <br> Developed by <a href="http://technextit.com">Team AAA</a></p>
+                    <ul class="social-block">
+                        <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                        <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                        <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>
+                        <li><a href=""><i class="ion-social-googleplus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- script -->
+    <script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bower_components/smooth-scroll/dist/js/smooth-scroll.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
 </html>
-
-
-
-
-
